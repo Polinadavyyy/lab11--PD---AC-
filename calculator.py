@@ -4,8 +4,18 @@ calculator.py
 
 One function per operation, in order.
 """
-# First example
+
 import math
+def square_root(a):
+    try:
+        return math.sqrt(a)
+    except ValueError:
+        raise ValueError("Number must be positive")
+def hypotenuse(a, b):
+    try:
+        return math.hypot(a, b)
+    except TypeError:
+        raise TypeError("Invalid input")
 def add(a, b): 
     return a + b
 
@@ -19,7 +29,6 @@ def divide(a, b):
     if a == 0:
         raise ZeroDivisionError("Cannot divide by zero")
     return b / a
-
 
 def logarithm(a, b):
     if a <= 0 or a == 1 or b <= 0:
